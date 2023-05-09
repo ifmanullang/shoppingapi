@@ -12,5 +12,5 @@ melakukan registrasi => http://localhost:3000/register
 	Delete("http://localhost:3000/deleteproducts/:id") => menghapus product berdasarkan id
 
 ### transaksi
-
-          
+Get(http://localhost:3000/transaksi)
+Post(http://localhost:3000/transaksi), masukkan user id dan id product untuk memasukkan product ke cart
