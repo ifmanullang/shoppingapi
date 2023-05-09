@@ -9,7 +9,7 @@ type User struct {
 	gorm.Model
 	Id       uint     `form:"id" json:"id" validate:"required"`
 	Name     string  `form:"name" json:"name" validate:"required"`
-	Email string     `form:"email" json:"email" validate:"required"`
+	Email 	string     `form:"email" json:"email" validate:"required"`
 	Username    string `form:"username" json:"username" validate:"required"`
 	Password    string `form:"password" json:"password" validate:"required"`
 }

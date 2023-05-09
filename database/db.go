@@ -2,12 +2,11 @@ package database
 
 import (
 	"fmt"
-
-	"github.com/glebarez/sqlite"
+	"gorm.io/driver/mysql"
+    _ "github.com/go-sql-driver/mysql"
 	"gorm.io/gorm"
 )
 
-// github.com/denisenkom/go-mssqldb
 
 var Db *gorm.DB
 func InitDb() *gorm.DB { // OOP constructor
@@ -16,8 +15,12 @@ func InitDb() *gorm.DB { // OOP constructor
 }
 
 func connectDB() (*gorm.DB) {
-	db, err := gorm.Open(sqlite.Open("gorm.db"), &gorm.Config{})
-	if err !=nil {
+	
+	dsn := "root:@tcp(localhost:3306)/cart_db"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+
+
+	if err != nil {
 		fmt.Println("Error...")
 		return nil
 	}
